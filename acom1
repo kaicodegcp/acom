@@ -8,12 +8,12 @@ Submitted for Week Ending
 7/11/2025
 
 Description
-The EAP Strategic Solutions team successfully completed the first image ingestion to Citi Enterprise Docker repository using the 3rd Party Image Ingestion Pipeline (3PIIP) on Jenkins. This marks the initial setup and validation of Citi’s internal Docker registry pipeline for secured image hosting.
+The EAP Strategic Solutions team successfully completed the first image ingestion to  Enterprise Docker repository using the 3rd Party Image Ingestion Pipeline (3PIIP) on Jenkins. This marks the initial setup and validation of internal Docker registry pipeline for secured image hosting.
 
 Key Achievements:
 
 Successfully ingested the first container image from Cloudera registry:
-container.repository.cloudera.com/cdp-private/cloudera/cdsw/ml-runtime-pbj-workbench-python3.12-standard:2024.10.1-b12
+container.repository.com/cdp-private/cloudera/cdsw/ml-runtime-pbj-workbench-python3.12-standard:2024.10.1-b12
 
 Verified ingestion flow through 3PIIP pipeline stages, including scan and upload to the internal Artifactory-based Docker repo.
 
@@ -23,7 +23,7 @@ Pipeline execution and build history verified on Jenkins job #3594.
 
 Benefits to the team:
 
-Enables secured and approved Docker image hosting within Citi infrastructure.
+Enables secured and approved Docker image hosting within  infrastructure.
 
 Sets up the foundation for ingesting additional images required for Cloudera CDS deployment and other enterprise workloads.
 
