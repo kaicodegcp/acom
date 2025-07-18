@@ -1,0 +1,45 @@
+Title
+Cloudera Docker Image Migration to Citi Artifact Repository Completed
+
+Team
+EAP Services
+
+Submitted for Week Ending
+7/19/2025
+
+Description
+Improving Image Management and Delivery Efficiency
+
+The EAP Strategic Solutions team successfully completed the migration of over 350 Cloudera Docker images to the newly established Citi Artifact Repository:
+docker-cto-dev-local.artifactrepository.citigroup.net/cti-eapbigdata-165345/cdp-private
+
+This transition enables the decommissioning of the older local Docker registry (sd-wv58-kflz.nam.nsroot.net:5000/cdp-private) and paves the way for centralized, scalable, and SDLC-compliant Docker image management across Citi platforms.
+
+Key Achievements:
+
+Migrated and structured 350+ Docker images under the cdp-private repo in Artifactory.
+
+Verified image visibility and repo structure through the Artifactory native browser.
+
+Validated new image path references to support future deployments in SDLC and non-prod environments.
+
+Enabled future automation of Cloudera Data Services deployments using Artifactory-hosted images.
+
+Benefits to the team:
+
+Reduces maintenance overhead by decommissioning local Docker repo servers.
+
+Enables secure, versioned image hosting in Citi's standard artifact ecosystem.
+
+Aligns with enterprise governance and compliance for container image management.
+
+Supports reusability and traceability across SDLC environments.
+
+Next Steps:
+
+Integrate new image repo paths into CDS installation and automation scripts.
+
+Coordinate final decommissioning of legacy Docker registry infrastructure.
+
+Implement validation checks and reporting for image updates in Artifactory.
+
