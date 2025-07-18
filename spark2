@@ -1,0 +1,65 @@
+In Cloudera CDP Private Cloud Base 7.3.1, Apache Spark 2 (via the SPARK2 parcel) is supported, but there are important compatibility caveats regarding JDK 17:
+
+✅ CDP 7.3.1 + Spark2 Parcel Compatibility:
+CDP 7.3.1 does support Spark2 (2.4.x) via the SPARK2 parcel.
+
+Spark2 was built and tested only with Java 8 (JDK 1.8).
+
+Cloudera does not support Spark2 with JDK 11+ officially, including JDK 17.
+
+Spark2 may fail at runtime or exhibit classloading issues or incompatibilities if you use JDK 17 on all nodes.
+
+🔥 Problem:
+If your cluster nodes only have JDK 17, and no JDK 1.8 is installed, you cannot run Spark2 workloads reliably. Spark2 depends heavily on Java 8 APIs and class compatibility.
+
+✅ Recommended Solution:
+To use Spark2 on CDP 7.3.1:
+
+Install JDK 1.8 (Oracle or OpenJDK 1.8.0_3xx preferred) on all cluster nodes in addition to JDK 17.
+
+Configure Spark2 to use JDK 1.8 explicitly by setting:
+
+bash
+Copy
+Edit
+export JAVA_HOME=/usr/java/jdk1.8.0_3xx
+in:
+
+Spark2 environment safety valve (in Cloudera Manager)
+
+Or globally using /etc/default/spark2 if present.
+
+Ensure Spark2 parcel is activated and the appropriate roles (Spark History Server, Gateway, etc.) are deployed.
+
+❌ Don’t Do:
+Don’t try to run Spark2 jobs on only JDK 17 – it's unsupported and will very likely fail.
+
+Don’t use Spark2 for new development — Cloudera recommends Spark3 for all new workloads (Spark2 is in maintenance).
+
+✅ Alternative: Use Spark 3
+CDP 7.3.1 supports Spark3 (via SPARK3 parcel), which is compatible with:
+
+JDK 8
+
+JDK 11
+
+Partial support for JDK 17, depending on patch level — best effort in 7.3.1, improved in later versions like CDP 7.6.x+.
+
+Summary:
+Component	Supported with JDK 17	Notes
+Spark2 (2.4.x)	❌ Not Supported	Needs JDK 1.8 only
+Spark3 (3.x)	⚠️ Partial (7.3.1)	Best-effort; more stable in later CDP
+
+If you want to run Spark2 workloads, you must install JDK 1.8 alongside JDK 17.
+
+Let me know if you want a script or CM setting change instructions to configure Spark2 with JDK 1.8.
+
+
+
+
+
+
+
+
+
+Ask ChatGPT
